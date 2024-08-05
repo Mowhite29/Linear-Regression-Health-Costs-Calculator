@@ -12,18 +12,8 @@ import tensorflow_docs.plots
 import tensorflow_docs.modeling
 
 # Import data
-if not os.path.exists("insurance.csv"):
-    url = "https://cdn.freecodecamp.org/project-data/health-costs/insurance.csv"
-    req = Request(
-        url=url, 
-        headers={"User-Agent": "Mozilla/5.0"}
-    )
+url = "https://cdn.freecodecamp.org/project-data/health-costs/insurance.csv"
 
-    webpage = urlopen(req)
-
-    with open("insurance.csv","wb") as output:
-        output.write(webpage.read())
-        
 dataset = pd.read_csv('insurance.csv')
 dataset.tail()
 
